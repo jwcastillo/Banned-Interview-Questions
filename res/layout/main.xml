@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <LinearLayout
+                    android:id="@+id/listTab"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+
+                    <FrameLayout
+                        android:id="@+id/listFrame"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" >
+
+                        <ViewFlipper
+                            android:id="@+id/listFlipper"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content" >
+
+                            <ListView
+                                android:id="@+id/areasList"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:entries="@array/areas" >
+                            </ListView>
+
+                            <ListView
+                                android:id="@+id/questionsList"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content" >
+                            </ListView>
+                        </ViewFlipper>
+
+                        <com.google.ads.AdView
+                            android:id="@+id/adView"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            ads:adSize="BANNER"
+                            ads:adUnitId="a14eefa45d0c7a1"
+                            ads:loadAdOnCreate="true"
+                            ads:testDevices="TEST_EMULATOR, 40BB7375BF01DF3F3C9DE8D5504722B9" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/randomTab"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <FrameLayout
+                        android:id="@+id/randomFrame"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" >
+
+                        <LinearLayout
+                            android:id="@+id/randomLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="vertical" >
+
+                            <Button
+                                android:id="@+id/nextButton"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Next" />
+
+                            <TextView
+                                android:id="@+id/randomQuestion"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:textSize="18dip" />
+                        </LinearLayout>
+
+                        <com.google.ads.AdView
+                            android:id="@+id/adView2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            ads:adSize="BANNER"
+                            ads:adUnitId="a14eefa45d0c7a1"
+                            ads:loadAdOnCreate="true"
+                            ads:testDevices="TEST_EMULATOR, 40BB7375BF01DF3F3C9DE8D5504722B9" />
+                    </FrameLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>
